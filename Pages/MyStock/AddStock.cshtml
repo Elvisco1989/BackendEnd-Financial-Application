@@ -1,0 +1,42 @@
+﻿@page
+@model COPVETFinances.Pages.MyStock.AddStockModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="stock1.Id" class="form-control" type="hidden" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="stock1.Category"></label>
+        <input asp-for="stock1.Category" class="form-control" />
+        <span asp-validation-for="stock1.Category" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="stock1.Location"></label>
+        <input asp-for="stock1.Location" class="form-control" />
+        <span asp-validation-for="stock1.Location" class="text-danger"></span>
+    </div>
+   @* <div class="form-group">
+        <label asp-for="stock1.Delivary"></label>
+        <input asp-for="stock1.Delivary" class="form-control" />
+        <span asp-validation-for="stock1.Delivary" class="text-danger"></span>
+    </div>*@
+    <div class="form-group">
+        <label asp-for="stock1.AmountInStock"></label>
+        <input asp-for="stock1.AmountInStock" class="form-control" />
+        <span asp-validation-for="stock1.AmountInStock" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="stock1.recieve"></label>
+        <input asp-for="stock1.recieve" class="form-control" />
+        <span asp-validation-for="stock1.recieve" class="text-danger"></span>
+    </div>
+   
+
+
+    <input type="submit" value="Add Stock" class="btn btn-primary" />
+</form>

@@ -1,0 +1,34 @@
+﻿@page
+@model COPVETFinances.Pages.Incomes.NewIncomeModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="Incomes.Id" class="form-control" type="hidden" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Incomes.Name"></label>
+        <input asp-for="Incomes.Name" class="form-control" />
+        <span asp-validation-for="Incomes.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Incomes.Description"></label>
+        <input asp-for="Incomes.Description" class="form-control" />
+        <span asp-validation-for="Incomes.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Incomes.Amount"></label>
+        <input asp-for="Incomes.Amount" class="form-control" />
+        <span asp-validation-for="Incomes.Amount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Incomes.Date"></label>
+        <input asp-for="Incomes.Date" class="form-control" />
+        <span asp-validation-for="Incomes.Date" class="text-danger"></span>
+    </div>
+
+    <input type="submit" value="Opdater Medlem" class="btn btn-primary" />
+</form>

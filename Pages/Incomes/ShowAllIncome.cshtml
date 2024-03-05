@@ -1,0 +1,47 @@
+﻿@page
+@model COPVETFinances.Pages.Incomes.ShowAllIncomeModel
+@{
+}
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Financial Statement for Copenhagen Veteran (Period November 24, 2023 to Febraury 1, 2024)</h1>
+            <h2>  Incomes</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/Incomes/NewIncome" class="btn btn-primary">New Income</a>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Date </th>
+            <th>Name</th>
+            <th>Description </th>
+           
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Incomes != null)
+        {
+            @foreach (var item in Model.Incomes)
+            {
+                <tr>
+                    <td width="30%"> @item.Date</td>
+                    <td width="50%"> @item.Name </td>
+                    <td width="30%"> @item.Description</td>
+                    <td width="30%"> @item.Amount</td>
+
+                    <td>
+                        <a asp-page="/Incomes/DeleteIncome" asp-route-sid="@item.Id" class="btn btn-danger m-1">Slet </a>
+                    </td>
+                    <td>
+                        <a asp-page="/Leaders/OpdatereLeder" asp-route-sid="@item.Id" class="btn btn-primary m-1">Opdater </a>
+                    </td>
+                </tr>
+            }
+        }
+</table>
+

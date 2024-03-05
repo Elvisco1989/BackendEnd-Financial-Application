@@ -1,0 +1,36 @@
+﻿@page
+@model COPVETFinances.Pages.Members.AddNewMemberModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="Player.Id" class="form-control" type="hidden" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Player.Name"></label>
+        <input asp-for="Player.Name" class="form-control" />
+        <span asp-validation-for="Player.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Player.Position"></label>
+        <input asp-for="Player.Position" class="form-control" />
+        <span asp-validation-for="Player.Position" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Player.Method"></label>
+        <input asp-for="Player.Method" class="form-control" />
+        <span asp-validation-for="Player.Method" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Player.Registration"></label>
+        <input asp-for="Player.Registration" class="form-control" />
+        <span asp-validation-for="Player.Registration" class="text-danger"></span>
+    </div>
+    
+
+    <input type="submit" value="Opdater Medlem" class="btn btn-primary" />
+</form>
+

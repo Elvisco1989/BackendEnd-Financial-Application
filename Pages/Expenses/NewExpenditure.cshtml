@@ -1,0 +1,34 @@
+﻿@page
+@model COPVETFinances.Pages.Expenses.NewExpenditureModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="Expenditures.Id" class="form-control" type="hidden" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Expenditures.Name"></label>
+        <input asp-for="Expenditures.Name" class="form-control" />
+        <span asp-validation-for="Expenditures.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Expenditures.Description"></label>
+        <input asp-for="Expenditures.Description" class="form-control" />
+        <span asp-validation-for="Expenditures.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Expenditures.Amount"></label>
+        <input asp-for="Expenditures.Amount" class="form-control" />
+        <span asp-validation-for="Expenditures.Amount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Expenditures.Date"></label>
+        <input asp-for="Expenditures.Date" class="form-control" />
+        <span asp-validation-for="Expenditures.Date" class="text-danger"></span>
+    </div>
+
+    <input type="submit" value="Opdater Medlem" class="btn btn-primary" />
+</form>

@@ -1,0 +1,38 @@
+﻿@page
+@model COPVETFinances.Pages.Members.DeleteMemberModel
+@{
+}
+<h1>Delete Expenditure</h1>
+<h3> Are you sure you want to delete this?</h3>
+<div>
+    <form method="post">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Players.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Players.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Players.Position)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Players.Position)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Players.Registration)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Players.Registration)
+            </dd>
+
+
+        </dl>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <input type="hidden" asp-for="Players.Id" />
+    </form>
+    <div>
+        <a asp-page="/Members/ShowALLMember">Back to list</a>
+
+    </div>
+</div>

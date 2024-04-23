@@ -1,5 +1,6 @@
 using COPVETFinances.Interfaces;
 using COPVETFinances.Model;
+using COPVETFinances.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,12 +8,12 @@ namespace COPVETFinances.Pages.Expenses
 {
     public class NewExpenditureModel : PageModel
     {
-        private IExpenditure expenditure;
+        private IExpenditureService1 expenditure;
 
         [BindProperty]
         public Expenditure Expenditures { get; set; }
 
-        public NewExpenditureModel(IExpenditure expenditure)
+        public NewExpenditureModel(IExpenditureService1 expenditure)
         {
             this.expenditure = expenditure;
         }

@@ -4,8 +4,8 @@ using COPVETFinances.Model;
 
 namespace COPVETFinances.Services
 {
-    public class ExpenditureService : IExpenditure
-    { 
+    public class ExpenditureService : IExpenditureService1
+    {
         private AppDBContext Context;
 
         public ExpenditureService(AppDBContext context)
@@ -28,7 +28,7 @@ namespace COPVETFinances.Services
 
         public Expenditure GetAllBetaling(int id)
         {
-            Expenditure expenditure = Context.Expenditures.FirstOrDefault(e=>e.Id==id);
+            Expenditure expenditure = Context.Expenditures.FirstOrDefault(e => e.Id == id);
             return expenditure;
         }
 
@@ -41,6 +41,13 @@ namespace COPVETFinances.Services
         {
             Context.Expenditures.Remove(Expenditure);
             Context.SaveChanges();
+        }
+        public decimal TotalExpenditure()
+        {
+            var Cost = Context.Expenditures.Sum(s => s.Amount) + Context.ExpenditureFamilyDays.Sum(s => s.Amount);
+
+
+            return (decimal)Cost;
         }
 
         public void UpdateBetaling(Expenditure Expenditure)

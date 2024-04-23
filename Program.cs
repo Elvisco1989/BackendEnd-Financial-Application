@@ -18,9 +18,10 @@ namespace COPVETFinances
             options.UseSqlServer(builder.Configuration.GetConnectionString("NewDatabase")));
 
             builder.Services.AddTransient<IIncome,IncomeService >();
-            builder.Services.AddTransient<IExpenditure, ExpenditureService>();
+            builder.Services.AddTransient<IExpenditureService1, ExpenditureService>();
             builder.Services.AddTransient<IPlayer, PlayerService>();
             builder.Services.AddTransient<IStock, StockService>();
+            builder.Services.AddTransient<IFamilyDaySevices, FamilyDaySevices>();
 
             var app = builder.Build();
 

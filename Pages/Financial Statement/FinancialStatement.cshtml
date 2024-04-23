@@ -2,10 +2,68 @@
 @model COPVETFinances.Pages.Financial_Statement.FinancialStatementModel
 @{
 }
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-section {
+        text-align: center;
+    }
+
+        .image-section img {
+            max-width: 50%; /* Adjust this value as needed */
+            max-height: 50%; /* Adjust this value as needed */
+        }
+
+    /* Other styles remain the same */
+</style>
+
+<div class="logo-container">
+    <div class="image-section">
+        <img src="~/css/VetLogo.jpeg" alt="Descriptive Alt Text">
+    </div>
+</div>
+
+<!-- Rest of your page content follows -->
+
+@*<div class="image-section">
+    <img src="~/css/VetLogo.jpeg" alt="Descriptive Alt Text">
+</div>*@
+<style>
+    #Container {
+        display: flex;
+        flex-direction: column;
+    }
+
+        #Container > div {
+            width: 100%;
+            text-align: left;
+        }
+
+            #Container > div:nth-child(2) {
+                text-align: right;
+                margin-top: auto; /* This pushes the Treasurer to the bottom */
+            }
+
+            #Container > div:last-child {
+                text-align: center;
+            }
+</style>
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-12">
-            <h1 style="color: blue;">Financial Statement for Copenhagen Veteran (Period November 24, 2023 to February 1, 2024)</h1>
+            <h1 style="color: blue;">Financial Statement for Copenhagen Veteran (Period Feb 1, 2024 to April 19, 2024)</h1>
 
 
 
@@ -106,7 +164,8 @@
 
            
             }
-                <tr>
+           
+                @*<tr>
                         <td colspan="3">
                             <!-- colspan to span across all columns -->
                             <h4><strong>Total Expenditure</strong></h4>
@@ -114,7 +173,7 @@
                         <td width="30%" style="color:darkred">@Model.totalExpenditure</td>
 
 
-                    </tr>
+                </tr>
 
                          <tr>
                             <td colspan="3">
@@ -124,6 +183,94 @@
                             <td width="30%" style="color:blue">@Model.Balance</td>
 
 
-                        </tr>
+                        </tr>*@
         }
 </table>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <h4><strong> Family day Expenses : Amount budgeted = 5000kr</strong></h4>
+        <tr>
+            <th>Date </th>
+
+            <th>Name</th>
+            <th>Description </th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.fam != null)
+        {
+            @foreach (var item in Model.fam)
+            {
+                <tr>
+                    <td width="30%"> @item.Date</td>
+                    <td width="50%"> @item.Name </td>
+                    <td width="30%"> @item.Description</td>
+                    <td width="30%"> @item.Amount</td>
+
+
+                </tr>
+
+
+
+            }
+            <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Total Family day Expenses</strong></h4>
+                </td>
+                <td width="30%" style="color:darkred">@Model.totalFamilyExpenditure</td>
+
+
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Total Expenditure</strong></h4>
+                </td>
+                <td width="30%" style="color:darkred">@Model.totalExpenditure</td>
+
+
+            </tr>
+
+            <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Balance in the Account</strong></h4>
+                </td>
+                <td width="30%" style="color:blue">@Model.Balance</td>
+
+
+            </tr>
+
+           @* <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Balance in the Account</strong></h4>
+                </td>
+                <td width="30%" style="color:blue">@Model.Balance</td>
+
+
+            </tr>*@
+        }
+</table>
+ <div id="Container">
+     <div>
+        <h4><strong> Financial Secretary</strong></h4>
+        
+         Elvis Mbah
+     </div>
+    <div>
+        <h4><strong> Treasurer</strong></h4>
+        
+        Che Nche
+    </div>
+    <div>
+        <h4><strong> President</strong></h4>
+        
+        Forbisong Bertrand
+    </div>
+
+
+     
+ </div>

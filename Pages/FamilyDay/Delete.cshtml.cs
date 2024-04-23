@@ -4,18 +4,19 @@ using COPVETFinances.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace COPVETFinances.Pages.Expenses
+namespace COPVETFinances.Pages.FamilyDay
 {
-    public class DeleteExpenditureModel : PageModel
+    public class DeleteModel : PageModel
     {
-
-        private IExpenditureService1 expenditure;
+        private IFamilyDaySevices expenditure;
 
         [BindProperty]
-        public Expenditure Expenditure { get; set; }
+        public ExpenditureFamilyDay Expenditure { get; set; }
 
 
-        public DeleteExpenditureModel(IExpenditureService1 expenditure)
+        
+
+        public DeleteModel(IFamilyDaySevices expenditure)
         {
             this.expenditure = expenditure;
         }
@@ -25,11 +26,11 @@ namespace COPVETFinances.Pages.Expenses
             Expenditure = expenditure.GetAllBetaling(sid);
         }
 
-        public      IActionResult OnPost()
+        public IActionResult OnPost()
         {
             expenditure.RemoveExpenses(Expenditure);
 
-            return RedirectToPage("/Expenses/ShowALLExpenditure");
+            return RedirectToPage("/FamilyDay/ShowEx");
         }
     }
 }

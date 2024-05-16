@@ -15,7 +15,7 @@ namespace COPVETFinances
             builder.Services.AddRazorPages();
 
             builder.Services.AddDbContext<AppDBContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("NewDatabase")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
 
             builder.Services.AddTransient<IIncome,IncomeService >();
             builder.Services.AddTransient<IExpenditureService1, ExpenditureService>();

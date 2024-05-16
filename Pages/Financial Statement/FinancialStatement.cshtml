@@ -63,7 +63,7 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-12">
-            <h1 style="color: blue;">Financial Statement for Copenhagen Veteran (Period Feb 1, 2024 to April 19, 2024)</h1>
+            <h1 style="color: blue;">Financial Statement for Copenhagen Veteran (Period Feb 1, 2024 to May 9, 2024)</h1>
 
 
 
@@ -130,7 +130,7 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2>  Expenditures</h2>
+            <h2> General Expenditures</h2>
         </div>
        @* <div class="col-6 text-end">
             <a asp-page="/Expenses/NewExpenditure" class="btn btn-primary">New Expenditure</a>
@@ -188,7 +188,7 @@
 </table>
 <table class="table table-bordered table table-striped" style="width:100%">
     <thead>
-        <h4><strong> Family day Expenses : Amount budgeted = 5000kr</strong></h4>
+        <h4><strong> Community Open day Expenditures : Amount budgeted = 15,000kr</strong></h4>
         <tr>
             <th>Date </th>
 
@@ -217,16 +217,19 @@
             <tr>
                 <td colspan="3">
                     <!-- colspan to span across all columns -->
-                    <h4><strong>Total Family day Expenses</strong></h4>
+                    <h4><strong>Total Community Open day Expenditures</strong></h4>
                 </td>
+                <div>
                 <td width="30%" style="color:darkred">@Model.totalFamilyExpenditure</td>
+                </div>
+               
 
 
             </tr>
             <tr>
                 <td colspan="3">
                     <!-- colspan to span across all columns -->
-                    <h4><strong>Total Expenditure</strong></h4>
+                    <h4><strong>Total Expenditure(General Expenditures + Community open day Expenditures)</strong></h4>
                 </td>
                 <td width="30%" style="color:darkred">@Model.totalExpenditure</td>
 

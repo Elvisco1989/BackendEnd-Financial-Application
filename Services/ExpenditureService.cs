@@ -28,7 +28,7 @@ namespace COPVETFinances.Services
 
         public Expenditure GetAllBetaling(int id)
         {
-            Expenditure expenditure = Context.Expenditures.FirstOrDefault(e => e.Id == id);
+            Expenditure? expenditure = Context.Expenditures.FirstOrDefault(e => e.Id == id);
             return expenditure;
         }
 

@@ -27,6 +27,10 @@ namespace COPVETFinances.Data
 
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<ExpenditureFamilyDay> ExpenditureFamilyDays { get; set; }
+        public DbSet<Party> Party1 { get; set; }
+        public DbSet<Contribution> Contributions { get; set; }
+
+        public DbSet<PartyIncome> PartyIncomes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -23,7 +23,7 @@ namespace COPVETFinances.Services
         {
             var Revenue = Context.Income.Sum(s => s.Amount);
             var registration = Context.Players.Sum(p => p.Registration);
-            var Cost = Context.Expenditures.Sum(s => s.Amount)+ Context.ExpenditureFamilyDays.Sum(s => s.Amount); 
+            var Cost = Context.Expenditures.Sum(s => s.Amount)+ Context.ExpenditureFamilyDays.Sum(s => s.Amount)+Context.Party1.Sum(s=>s.Amount); 
             //var fam = Context.ExpenditureFamilyDays.Sum(s => s.Amount);
             var Profit = (Revenue + registration) - Cost;
             return (decimal)Profit; ;
@@ -55,7 +55,7 @@ namespace COPVETFinances.Services
 
         public decimal TotalExpenditure()
         {
-            var Cost = Context.Expenditures.Sum(s => s.Amount)+Context.ExpenditureFamilyDays.Sum(s=>s.Amount);
+            var Cost = Context.Expenditures.Sum(s => s.Amount)+Context.ExpenditureFamilyDays.Sum(s=>s.Amount) + Context.Party1.Sum(s=>s.Amount);
             
 
             return (decimal)Cost;

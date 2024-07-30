@@ -15,13 +15,14 @@ namespace COPVETFinances
             builder.Services.AddRazorPages();
 
             builder.Services.AddDbContext<AppDBContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("NewDatabase")));
 
             builder.Services.AddTransient<IIncome,IncomeService >();
             builder.Services.AddTransient<IExpenditureService1, ExpenditureService>();
             builder.Services.AddTransient<IPlayer, PlayerService>();
             builder.Services.AddTransient<IStock, StockService>();
             builder.Services.AddTransient<IFamilyDaySevices, FamilyDaySevices>();
+            builder.Services.AddTransient<IParty1, Party1Services>();
 
             var app = builder.Build();
 

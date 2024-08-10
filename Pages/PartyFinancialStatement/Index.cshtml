@@ -1,0 +1,279 @@
+﻿@page
+@model COPVETFinances.Pages.PartyFinancialStatement.IndexModel
+@{
+    ViewData["Title"] = "Party Financial Statement";
+}
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-section {
+        text-align: center;
+    }
+
+        .image-section img {
+            max-width: 50%; /* Adjust this value as needed */
+            max-height: 50%; /* Adjust this value as needed */
+        }
+
+    .blue-text {
+        color: blue;
+    }
+
+    .green-text {
+        color: green;
+    }
+
+    /* Other styles remain the same */
+</style>
+
+<div class="logo-container">
+    <div class="image-section">
+        <img src="~/css/VetLogo.jpeg" alt="Descriptive Alt Text">
+    </div>
+</div>
+
+<!-- Rest of your page content follows -->
+@*<div class="image-section">
+    <img src="~/css/VetLogo.jpeg" alt="Descriptive Alt Text">
+</div>*@
+<style>
+    #Container {
+        display: flex;
+        flex-direction: column;
+    }
+
+        #Container > div {
+            width: 100%;
+            text-align: left;
+        }
+
+            #Container > div:nth-child(2) {
+                text-align: right;
+                margin-top: auto; /* This pushes the Treasurer to the bottom */
+            }
+
+            #Container > div:last-child {
+                text-align: center;
+            }
+</style>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-12">
+            <h1 style="color: blue;">Party Financial Statement for Copenhagen Veteran (August 3, 2024)</h1>
+            <h2>Party Incomes</h2>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Incomes != null)
+        {
+            @foreach (var item in Model.Incomes)
+            {
+                <tr>
+                    <td width="30%">@item.Date</td>
+                    <td width="50%">@item.Name</td>
+                    <td width="30%">@item.Description</td>
+                    <td width="30%">@item.Amount</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Total Income</strong></h4>
+                </td>
+                <td width="30%" class="blue-text">@Model.TotalPartyIncome</td>
+            </tr>
+        }
+</table>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Party Expenditures</h1>
+        </div>
+    </div>
+</div>
+<h2>Expenditure on Hall</h2>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.halls != null)
+        {
+            @foreach (var item in Model.halls)
+            {
+                <tr>
+                    <td width="30%">@item.Date</td>
+                    <td width="50%">@item.Name</td>
+                    <td width="30%">@item.Description</td>
+                    <td width="30%">@item.Amount</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Total Amount spend on Hall</strong></h4>
+                </td>
+                <td width="30%" class="blue-text">@Model.TotalHall</td>
+            </tr>
+        }
+</table>
+<h2>Expenditure on Drinks</h2>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Drinks != null)
+        {
+            @foreach (var item in Model.Drinks)
+            {
+                <tr>
+                    <td width="30%">@item.Date</td>
+                    <td width="50%">@item.Name</td>
+                    <td width="30%">@item.Description</td>
+                    <td width="30%">@item.Amount</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Total Amount spend on Drinks</strong></h4>
+                </td>
+                <td width="30%" class="blue-text">@Model.TotalDrinks</td>
+            </tr>
+        }
+</table>
+<h2>Expenditure on Food</h2>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Expenses != null)
+        {
+            @foreach (var item in Model.Expenses)
+            {
+                <tr>
+                    <td width="30%">@item.Date</td>
+                    <td width="50%">@item.Name</td>
+                    <td width="30%">@item.Description</td>
+                    <td width="30%">@item.Amount</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Total Amount spend on Food</strong></h4>
+                </td>
+                <td width="30%" class="blue-text">@Model.TotalFood</td>
+            </tr>
+        }
+</table>
+<h2>Expenditure on Sport</h2>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.sports != null)
+        {
+            @foreach (var item in Model.sports)
+            {
+                <tr>
+                    <td width="30%">@item.Date</td>
+                    <td width="50%">@item.Name</td>
+                    <td width="30%">@item.Description</td>
+                    <td width="30%">@item.Amount</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3">
+                    <!-- colspan to span across all columns -->
+                    <h4><strong>Total Amount spend on sports</strong></h4>
+                </td>
+                <td width="30%" class="blue-text">@Model.TotalSport</td>
+            </tr>
+        }
+        <tr>
+            <td colspan="3">
+                <!-- colspan to span across all columns -->
+                <h4><strong>Total Expenditure(Ex Hall + Ex Drinks + Ex Food + Ex Sport)</strong></h4>
+            </td>
+            <td width="30%" class="green-text">@Model.TotalExpenditure</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <!-- colspan to span across all columns -->
+                <h4><strong>Total Profit(Income - Expenditure)</strong></h4>
+            </td>
+            <td width="30%" class="green-text">@Model.profit</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <!-- colspan to span across all columns -->
+                <h4><strong>Deposite from Hall : Pending = 2000dkk</strong></h4>
+                <h4><strong>Dept from the Bar : Pending = 1350dkk</strong></h4>
+            </td>
+           
+        </tr>
+</table>
+
+<div id="Container">
+    <div>
+        <h4><strong>Financial Secretary</strong></h4>
+        Elvis Mbah
+    </div>
+    <div>
+        <h4><strong>Treasurer</strong></h4>
+        Che Nche
+    </div>
+    <div>
+        <h4><strong>President</strong></h4>
+        Forbisong Bertrand
+    </div>
+</div>

@@ -12,7 +12,7 @@ namespace COPVETFinances.Services
             Context = context;
         }
 
-        public void AddBetaling(PartyIncome income)
+        public void AddBetaling(PartIncome income)
         {
             Context.PartyIncomes.Add(income);
             Context.SaveChanges();
@@ -28,13 +28,13 @@ namespace COPVETFinances.Services
         //    return (decimal)Profit; ;
         //}
 
-        public PartyIncome? GetAllBetaling(int id)
+        public PartIncome? GetAllBetaling(int id)
         {
-            PartyIncome? income = Context.PartyIncomes.FirstOrDefault(i => i.Id == id);
+            PartIncome? income = Context.PartyIncomes.FirstOrDefault(i => i.Id == id);
             return income;
         }
 
-        public IEnumerable<PartyIncome> GetBetaling()
+        public IEnumerable<PartIncome> GetBetaling()
         {
             return Context.PartyIncomes;
         }
@@ -46,7 +46,7 @@ namespace COPVETFinances.Services
         //    return (decimal)registration;
         //}
 
-        public void RemoveBetaling(PartyIncome income)
+        public void RemoveBetaling(PartIncome income)
         {
             Context.PartyIncomes.Remove(income);
             Context.SaveChanges();

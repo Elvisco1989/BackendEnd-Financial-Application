@@ -30,7 +30,13 @@ namespace COPVETFinances.Data
         public DbSet<Party> Party1 { get; set; }
         public DbSet<Contribution> Contributions { get; set; }
 
-        public DbSet<PartyIncome> PartyIncomes { get; set; }
+        public DbSet<PartIncome> PartyIncomes { get; set; }
+
+        public DbSet<DrinksExpenses> Drinks { get; set; }
+        public DbSet<FoodExpenses> Foods { get; set; }
+        public DbSet<SportExpenses> Sports { get; set; }
+        public DbSet<HallAndLogistics> Hall { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,6 +47,10 @@ namespace COPVETFinances.Data
                     .HasColumnType("decimal(18,2)"); // Adjust precision and scale as per your requirements
             });
         }
+        public DbSet<COPVETFinances.Model.DrinksExpenses> DrinksExpenses { get; set; } = default!;
+        public DbSet<COPVETFinances.Model.HallAndLogistics> HallAndLogistics { get; set; } = default!;
+        public DbSet<COPVETFinances.Model.FoodExpenses> FoodExpenses { get; set; } = default!;
+        public DbSet<COPVETFinances.Model.SportExpenses> SportExpenses { get; set; } = default!;
     }
 
     

@@ -1,0 +1,49 @@
+﻿@page
+@model COPVETFinances.Pages.PartyIncome.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PartyIncome</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PartyIncome.Name" class="control-label"></label>
+                <input asp-for="PartyIncome.Name" class="form-control" />
+                <span asp-validation-for="PartyIncome.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartyIncome.Description" class="control-label"></label>
+                <input asp-for="PartyIncome.Description" class="form-control" />
+                <span asp-validation-for="PartyIncome.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartyIncome.Amount" class="control-label"></label>
+                <input asp-for="PartyIncome.Amount" class="form-control" />
+                <span asp-validation-for="PartyIncome.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartyIncome.Date" class="control-label"></label>
+                <input asp-for="PartyIncome.Date" class="form-control" />
+                <span asp-validation-for="PartyIncome.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

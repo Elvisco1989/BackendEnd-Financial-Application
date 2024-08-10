@@ -4,10 +4,10 @@ namespace COPVETFinances.Services
 {
     public interface IPartyIncomeServices
     {
-        void AddBetaling(PartyIncome income);
-        PartyIncome? GetAllBetaling(int id);
-        IEnumerable<PartyIncome> GetBetaling();
-        void RemoveBetaling(PartyIncome income);
+        void AddBetaling(PartIncome income);
+        PartIncome? GetAllBetaling(int id);
+        IEnumerable<PartIncome> GetBetaling();
+        void RemoveBetaling(PartIncome income);
         decimal TotalIncome();
         void UpdateBetaling(Income income);
     }

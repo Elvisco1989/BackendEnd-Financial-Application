@@ -3,18 +3,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace COPVETFinances.Model
 {
-    public class PartyIncome
+    public class SportExpenses
     {
         [Key]
         public int Id { get; set; }
 
         [StringLength(100)]
 
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(100)]
 
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         public decimal? Amount { get; set; }
 

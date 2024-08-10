@@ -165,25 +165,7 @@
            
             }
            
-                @*<tr>
-                        <td colspan="3">
-                            <!-- colspan to span across all columns -->
-                            <h4><strong>Total Expenditure</strong></h4>
-                        </td>
-                        <td width="30%" style="color:darkred">@Model.totalExpenditure</td>
-
-
-                </tr>
-
-                         <tr>
-                            <td colspan="3">
-                                <!-- colspan to span across all columns -->
-                                <h4><strong>Balance in the Account</strong></h4>
-                            </td>
-                            <td width="30%" style="color:blue">@Model.Balance</td>
-
-
-                        </tr>*@
+               
         }
 </table>
 <table class="table table-bordered table table-striped" style="width:100%">
@@ -226,7 +208,7 @@
 
 
             </tr>
-             <tr>
+            <tr>
                 <td colspan="3">
                     <!-- colspan to span across all columns -->
                     <h4><strong>Total Expenditure(General Expenditures + Community open day Expenditures)</strong></h4>
@@ -236,6 +218,8 @@
 
             </tr>
 
+
+
             <tr>
                 <td colspan="3">
                     <!-- colspan to span across all columns -->
@@ -244,91 +228,13 @@
                 <td width="30%" style="color:blue">@Model.Balance</td>
 
 
-            </tr> 
-
-           <tr>
-                <td colspan="3">
-                    <!-- colspan to span across all columns -->
-                    <h4><strong>Balance in the Account</strong></h4>
-                </td>
-                <td width="30%" style="color:blue">@Model.Balance</td>
-
-
             </tr>
+          
         }
 </table>
 
-@* <table class="table table-bordered table table-striped" style="width:100%">
-<thead>
-    <h4><strong> Party Expenditures</strong></h4>
-    <tr>
-        <th>Date </th>
+ 
 
-        <th>Name</th>
-        <th>Description </th>
-        <th>Amount</th>
-    </tr>
-</thead>
-<tbody>
-    @if (Model.party != null)
-    {
-        @foreach (var item in Model.party)
-        {
-            <tr>
-                <td width="30%"> @item.Date</td>
-                <td width="50%"> @item.Name </td>
-                <td width="30%"> @item.Description</td>
-                <td width="30%"> @item.Amount</td>
-
-
-            </tr>
-
-
-
-        }
-        <tr>
-            <td colspan="3">
-                <!-- colspan to span across all columns -->
-                <h4><strong>Total Party Expenditures</strong></h4>
-            </td>
-            <div>
-            <td width="30%" style="color:darkred">@Model.PartyExpenses</td>
-            </div>
-
-
-
-        </tr>
-        <tr>
-            <td colspan="3">
-                <!-- colspan to span across all columns -->
-                <h4><strong>Total Expenditure(General Expenditures + Community open day Expenditures + Party Expenses)</strong></h4>
-            </td>
-            <td width="30%" style="color:darkred">@Model.totalExpenditure</td>
-
-
-        </tr>
-
-        <tr>
-            <td colspan="3">
-                <!-- colspan to span across all columns -->
-                <h4><strong>Balance in the Account</strong></h4>
-            </td>
-            <td width="30%" style="color:blue">@Model.Balance</td>
-
-
-        </tr> *@
-
-        @* <tr>
-    <td colspan="3">
-    <!-- colspan to span across all columns -->
-    <h4><strong>Balance in the Account</strong></h4>
-    </td>
-    <td width="30%" style="color:blue">@Model.Balance</td>
-
-
-    </tr>*@
-   @*  } *@
-    </table>
  <div id="Container">
      <div>
         <h4><strong> Financial Secretary</strong></h4>
